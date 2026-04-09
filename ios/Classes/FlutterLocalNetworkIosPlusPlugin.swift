@@ -7,10 +7,10 @@
 import Flutter
 import UIKit
 
-public class FlutterLocalNetworkIosPlugin: NSObject, FlutterPlugin {
+public class FlutterLocalNetworkIosPlusPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_local_network_ios", binaryMessenger: registrar.messenger())
-    let instance = FlutterLocalNetworkIosPlugin()
+    let channel = FlutterMethodChannel(name: "flutter_local_network_ios_plus", binaryMessenger: registrar.messenger())
+    let instance = FlutterLocalNetworkIosPlusPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

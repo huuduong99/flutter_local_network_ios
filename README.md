@@ -1,10 +1,18 @@
-# flutter_local_network_ios
+# flutter_local_network_ios_plus
 
-For iOS
+A Flutter plugin for handling iOS local network permissions.
 
-* Add Key `Privacy - Local Network Usage Description` to info.plist.
-* Add Key `Bonjour services` Value item `_paperang._tcp`
+## iOS Setup
 
+Add the following keys to your `ios/Runner/Info.plist` file:
+
+### Privacy - Local Network Usage Description
+```xml
+<key>NSLocalNetworkUsageDescription</key>
+<string>Do you want to allow access to the local network?</string>
+```
+
+### Bonjour Services
 ```xml
 <key>NSBonjourServices</key>
 <array>
@@ -12,7 +20,13 @@ For iOS
 </array>
 ```
 
-```xml
-<key>NSLocalNetworkUsageDescription</key>
-<string>Do you want to allow access to the local network?</string>
+## Usage
+
+```dart
+import 'package:flutter_local_network_ios_plus/flutter_local_network_ios_plus.dart';
+
+// Request local network authorization
+final plugin = FlutterLocalNetworkIosPlus();
+bool? result = await plugin.requestAuthorization();
+debugPrint("Authorization result: $result");
 ```

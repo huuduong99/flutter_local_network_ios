@@ -1,8 +1,9 @@
-name: flutter_local_network_ios
-description: A for ios local network permission Flutter project.
+name: flutter_local_network_ios_plus
+description: A Flutter plugin for handling iOS local network permissions.
 version: 0.0.1
-homepage: https://github.com/rocchen/flutter_local_network_ios
-
+homepage: https://github.com/huuduong99/flutter_local_network_ios_plus
+repository: https://github.com/huuduong99/flutter_local_network_ios_plus
+issue_tracker: https://github.com/huuduong99/flutter_local_network_ios_plus/issues
 
 environment:
   sdk: '>=2.19.6 <4.0.0'
@@ -36,10 +37,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.flutter_local_network_ios
-        pluginClass: FlutterLocalNetworkIosPlugin
+        package: com.example.flutter_local_network_ios_plus
+        pluginClass: FlutterLocalNetworkIosPlusPlugin
       ios:
-        pluginClass: FlutterLocalNetworkIosPlugin
+        pluginClass: FlutterLocalNetworkIosPlusPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

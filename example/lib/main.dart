@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_local_network_ios/flutter_local_network_ios.dart';
+import 'package:flutter_local_network_ios_plus/flutter_local_network_ios_plus.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-  final _flutterLocalNetworkIosPlugin = FlutterLocalNetworkIos();
+  final _flutterLocalNetworkIosPlugin = FlutterLocalNetworkIosPlus();
 
   @override
   void initState() {
@@ -28,12 +28,14 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     bool? result = await _flutterLocalNetworkIosPlugin.requestAuthorization();
-    print("result  $result");
+    debugPrint("requestAuthorization result: $result");
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      platformVersion = await _flutterLocalNetworkIosPlugin.getPlatformVersion() ?? 'Unknown platform version';
+      platformVersion =
+          await _flutterLocalNetworkIosPlugin.getPlatformVersion() ??
+              'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
